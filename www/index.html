@@ -38,6 +38,45 @@
         <script type="text/javascript">
             app.initialize();
             alert("Ok");
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // device APIs are available
+            //
+            function onDeviceReady() {// prep some variables
+                  var startDate = new Date("September 24, 2013 13:00:00");
+                  var endDate = new Date("September 24, 2013 14:30:00");
+                  var title = "My nice event";
+                  var location = "Home";
+                  var notes = "Some notes about this event.";
+                  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+                  var error = function(message) { alert("Error: " + message); };
+                
+                  // create a calendar (iOS only for now)
+                  window.plugins.calendar.createCalendar(calendarName,success,error);
+                
+                  // delete a calendar (iOS only for now)
+                  window.plugins.calendar.deleteCalendar(calendarName,success,error);
+                
+                  // create (the only function also supported on Android for now)
+                  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+                
+                  // create in a named calendar (iOS only for now)
+                  window.plugins.calendar.createEventInNamedCalendar(title,location,notes,startDate,endDate,calendarName,success,error);
+                
+                  // find (iOS only for now)
+                  window.plugins.calendar.findEvent(title,location,notes,startDate,endDate,success,error);
+                
+                  // find all events in a named calendar (iOS only for now)
+                  window.plugins.calendar.findAllEventsInNamedCalendar(calendarName,success,error);
+                
+                  // change an event (iOS only for now)
+                  var newTitle = "New title!";
+                  window.plugins.calendar.modifyEvent(title,location,notes,startDate,endDate,newTitle,location,notes,startDate,endDate,success,error);
+                
+                  // delete (iOS only for now)
+                  // note that it deletes all matching events, which are duplicates anyway
+                  window.plugins.calendar.deleteEvent(newTitle,location,notes,startDate,endDate,success,error);
+            }
         </script>
     </body>
 </html>
