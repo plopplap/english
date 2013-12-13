@@ -28,15 +28,11 @@
     <body>
         <div class="app">
             <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+            <p>Ca marche????!!!!!</p>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
             alert("Ok");
             document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -76,7 +72,7 @@
                   // delete (iOS only for now)
                   // note that it deletes all matching events, which are duplicates anyway
                   window.plugins.calendar.deleteEvent(newTitle,location,notes,startDate,endDate,success,error);
-            }
+            };
         </script>
     </body>
 </html>
