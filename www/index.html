@@ -26,24 +26,16 @@
     //
     function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
+            'Tu es le plus beau Toto!!',  // message
             alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
+            'Après JO quand même',            // title
+            'ok'                  // buttonName
         );
-        var startDate = new Date("September 24, 2013 13:00:00");
-        var endDate = new Date("September 24, 2013 14:30:00");
-        var title = "My nice event";
-        var location = "Home";
-        var notes = "Some notes about this event.";
-        var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-        var error = function(message) { alert("Error: " + message); };
-        window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
     }
 
     </script>
   </head>
   <body>
-    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick="showAlert(); return false;">Cliques ici Toto!!</a></p>
   </body>
 </html>
