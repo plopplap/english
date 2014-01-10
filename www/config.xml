@@ -50,6 +50,6 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <gap:plugin name="nl.x-services.plugins.calendar" />
+    <gap:plugin name="genesis.plugins.calendar" />
     <access origin="http://127.0.0.1*" />
 </widget>
