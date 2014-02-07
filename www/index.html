@@ -53,39 +53,33 @@
         navigator.notification.vibrate(3000);
     }
     
-    function captureSuccess(mediaFiles) {
-        var i, len;
-        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-            uploadFile(mediaFiles[i]);
-        }       
-    }
 
     // A button will call this function
     //
     function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
     }
     
     // Called when a photo is successfully retrieved
     //
     function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
+      // Uncomment to view the image file URI 
+      // console.log(imageURI);
 
       // Get image handle
       //
-      var smallImage = document.getElementById('smallImage');
+      var largeImage = document.getElementById('largeImage');
 
       // Unhide image elements
       //
-      smallImage.style.display = 'block';
+      largeImage.style.display = 'block';
 
       // Show the captured photo
       // The inline CSS rules are used to resize the image
       //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
+      largeImage.src = imageURI;
     }
 
      // Called if something bad happens.
@@ -112,7 +106,7 @@
       <div class="ui-grid-solo">
         <button onclick="capturePhoto();">Capture Photo</button> 
       </div>
-      <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+      <img style="display:none;" id="largeImage" src="" />
     </div>
   </body>
 </html>
