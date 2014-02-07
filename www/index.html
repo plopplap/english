@@ -47,6 +47,10 @@
         // create
         window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
     }
+    
+    function vibrate() {
+        navigator.notification.vibrate(1000);
+    }
 
     </script>
   </head>
@@ -60,6 +64,9 @@
       </div>
       <div class="ui-grid-solo">
         <button type="button" data-theme="b" onclick="showCalendar(); return false;">Open the Calendar</button>
+      </div>
+      <div class="ui-grid-solo">
+        <button type="button" data-theme="b" onclick="vibrate(); return false;">Vibrations</button>
       </div>
     </div>
   </body>
