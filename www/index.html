@@ -4,7 +4,6 @@
     <title>Notification Example</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
-    <script type="code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="js/plugins/Calendar.js"></script>
     <script src="js/plugins/Flashlight.js"></script>
@@ -118,8 +117,8 @@
         <button type="button" class="btn btn-default" onclick="showAlert(); return false;">
           Push an Alert
         </button>
-        <button type="button" data-theme="b" onclick="showCalendar(); return false;">Open the Calendar</button>
-        <button type="button" data-theme="b" onclick="vibrate(); return false;">Vibrations</button>
+        <button type="button" onclick="showCalendar(); return false;">Open the Calendar</button>
+        <button type="button" onclick="vibrate(); return false;">Vibrations</button>
         <button onclick="capturePhoto();">Capture Photo</button> 
         <button onclick="flashOn();">Flash On</button> 
         <button onclick="flashOff();">Flash Off</button> 
