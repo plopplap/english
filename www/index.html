@@ -2,10 +2,8 @@
 <html>
   <head>
     <title>Notification Example</title>
-    <LINK rel="stylesheet" type="text/css" href="code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
     <script type="code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="js/plugins/Calendar.js"></script>
@@ -117,10 +115,9 @@
         <h3 class="panel-title">English Project</h3>
       </div>
       <div class="panel-body">
-        <button type="button" class="btn btn-default dropdown-toggle" onclick="showAlert(); return false;">
+        <button type="button" class="btn btn-default" onclick="showAlert(); return false;">
           Push an Alert
         </button>
-        <button type="button" data-theme="b" onclick="showAlert(); return false;">Push an Alert</button>
         <button type="button" data-theme="b" onclick="showCalendar(); return false;">Open the Calendar</button>
         <button type="button" data-theme="b" onclick="vibrate(); return false;">Vibrations</button>
         <button onclick="capturePhoto();">Capture Photo</button> 
@@ -129,5 +126,6 @@
         <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
       </div>
     </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </body>
 </html>
