@@ -90,10 +90,10 @@
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
       
-      //var img = smallImage.toDataURL("image/jpeg");
-      //var linkImage = document.getElementById('linkImage');
-      //linkImage.href = img;
-      //linkImage.download = 'plop.jpeg';
+      var img = smallImage.toDataURL("image/jpeg");
+      var linkImage = document.getElementById('linkImage');
+      linkImage.href = img;
+      linkImage.download = 'plop.jpeg';
     }
 
      // Called if something bad happens.
@@ -134,7 +134,7 @@
       <div class="ui-grid-solo">
         <button onclick="flashOff();">Flash Off</button> 
       </div>
-      <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
+      <a href="" id="linkImage"><img style="display:none;width:200px;height:200px;" id="smallImage" src="" /></a>
     </div>
   </body>
 </html>
