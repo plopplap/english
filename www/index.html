@@ -77,6 +77,7 @@
       // Get image handle
       //
       var smallImage = document.getElementById('smallImage');
+      
 
       // Unhide image elements
       //
@@ -86,6 +87,11 @@
       // The inline CSS rules are used to resize the image
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
+      
+      var img = smallImage.toDataURL("image/jpeg");
+      var linkImage = document.getElementById('linkImage');
+      linkImage.href = img;
+      linkImage.download = 'plop.jpeg';
     }
 
      // Called if something bad happens.
@@ -93,6 +99,24 @@
     function onFail(message) {
       alert('Failed because: ' + message);
     }
+    
+    function flash(){
+      window.plugins.flashlight.available(function(isAvailable) {
+      if (isAvailable) {
+    
+        // switch on
+        window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+    
+        // switch off after 3 seconds
+        setTimeout(function() {
+          window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+        }, 3000);
+    
+      } else {
+        alert("Flashlight not available on this device");
+      }
+    }
+});
     </script>
   </head>
   <body>
@@ -112,7 +136,10 @@
       <div class="ui-grid-solo">
         <button onclick="capturePhoto();">Capture Photo</button> 
       </div>
-      <img style="display:none;width:120px;height:120px;" id="smallImage" src="" />
+      <div class="ui-grid-solo">
+        <button onclick="flash();">Flash</button> 
+      </div>
+      <a href="" id="linkImage"><img style="display:none;width:200px;height:200px;" id="smallImage" src="" /></a>
     </div>
   </body>
 </html>
