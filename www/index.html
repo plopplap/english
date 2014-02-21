@@ -100,22 +100,12 @@
       alert('Failed because: ' + message);
     }
     
-    function flash(){
-      window.plugins.flashlight.available(function(isAvailable) {
-        if (isAvailable) {
-      
-          // switch on
-          window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
-      
-          // switch off after 3 seconds
-          setTimeout(function() {
-            window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-          }, 3000);
-      
-        } else {
-          alert("Flashlight not available on this device");
-        }
-      }
+    function flashOn(){
+      window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+    }
+    
+    function flashOff(){
+      window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
     }
 });
     </script>
@@ -138,7 +128,10 @@
         <button onclick="capturePhoto();">Capture Photo</button> 
       </div>
       <div class="ui-grid-solo">
-        <button onclick="flash();">Flash</button> 
+        <button onclick="flashOn();">Flash On</button> 
+      </div>
+      <div class="ui-grid-solo">
+        <button onclick="flashOff();">Flash Off</button> 
       </div>
       <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
     </div>
