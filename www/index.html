@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Notification Example</title>
+    <title>English Project</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    
     <script src="js/plugins/Flashlight.js"></script>
     <script src="js/plugins/Calendar.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8">
-    
-    
     // Wait for device API libraries to load
-    //
     document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
-    //
     function onDeviceReady() {
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
@@ -72,7 +71,6 @@
     }
     
     // Called when a photo is successfully retrieved
-    //
     function onPhotoDataSuccess(imageData) {
       // Uncomment to view the base64 encoded image data
       // console.log(imageData);
@@ -95,7 +93,6 @@
     }
 
      // Called if something bad happens.
-    // 
     function onFail(message) {
       alert('Failed because: ' + message);
     }
@@ -115,20 +112,16 @@
         <h3 class="panel-title">English Project</h3>
       </div>
       <div class="panel-body">
-        <button type="button" class="btn btn-default" onclick="showAlert(); return false;">
+        <button type="button" class="btn btn-primary" onclick="showAlert(); return false;">
           Push an Alert
         </button>
-        <button type="button" onclick="showCalendar(); return false;">Open the Calendar</button>
-        <button type="button" onclick="vibrate(); return false;">Vibrations</button>
-        <button onclick="capturePhoto();">Capture Photo</button> 
-        <button onclick="flashOn();">Flash On</button> 
-        <button onclick="flashOff();">Flash Off</button> 
+        <button class="btn btn-primary" onclick="showCalendar(); return false;">Open the Calendar</button>
+        <button class="btn btn-primary" onclick="vibrate(); return false;">Vibrations</button>
+        <button class="btn btn-primary" onclick="capturePhoto();">Capture Photo</button> 
+        <button class="btn btn-primary" onclick="flashOn();">Flash On</button> 
+        <button class="btn btn-primary" onclick="flashOff();">Flash Off</button> 
         <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
       </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
