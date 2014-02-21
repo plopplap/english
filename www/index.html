@@ -88,8 +88,8 @@
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
       
-      var img = smallImage.toDataURL("image/jpeg");
-      var linkImage = document.getElementById('linkImage');
+      //var img = smallImage.toDataURL("image/jpeg");
+      //var linkImage = document.getElementById('linkImage');
       //linkImage.href = img;
       //linkImage.download = 'plop.jpeg';
     }
@@ -140,7 +140,7 @@
       <div class="ui-grid-solo">
         <button onclick="flash();">Flash</button> 
       </div>
-      <a href="" id="linkImage"><img style="display:none;width:200px;height:200px;" id="smallImage" src="" /></a>
+      <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
     </div>
   </body>
 </html>
