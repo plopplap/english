@@ -3,6 +3,9 @@
   <head>
     <title>Notification Example</title>
     <LINK rel="stylesheet" type="text/css" href="code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="js/plugins/Calendar.js"></script>
@@ -109,29 +112,22 @@
     </script>
   </head>
   <body>
-    <div data-role="header">
-      <h1>English Project</h1>
-    </div>
-    <div role="main" class="ui-content">
-      <div class="ui-grid-solo">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">English Project</h3>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-default dropdown-toggle" onclick="showAlert(); return false;">
+          Push an Alert
+        </button>
         <button type="button" data-theme="b" onclick="showAlert(); return false;">Push an Alert</button>
-      </div>
-      <div class="ui-grid-solo">
         <button type="button" data-theme="b" onclick="showCalendar(); return false;">Open the Calendar</button>
-      </div>
-      <div class="ui-grid-solo">
         <button type="button" data-theme="b" onclick="vibrate(); return false;">Vibrations</button>
-      </div>
-      <div class="ui-grid-solo">
         <button onclick="capturePhoto();">Capture Photo</button> 
-      </div>
-      <div class="ui-grid-solo">
         <button onclick="flashOn();">Flash On</button> 
-      </div>
-      <div class="ui-grid-solo">
         <button onclick="flashOff();">Flash Off</button> 
+        <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
       </div>
-      <img style="display:none;width:200px;height:200px;" id="smallImage" src="" />
     </div>
   </body>
 </html>
