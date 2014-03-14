@@ -39,16 +39,14 @@
     
     function showCalendar() {
     // prep some variables
-        var startDate = new Date("May 24, 2014 13:00:00");
-        var endDate = new Date("May 24, 2014 14:30:00");
-        var title = "My Calendar";
+        var startDate = new Date(2014,2,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+        var endDate = new Date(2014,2,15,19,30,0,0,0);
+        var title = "My nice event";
         var location = "Home";
-        var notes = "Add my event";
+        var notes = "Some notes about this event.";
         var success = function(message) { alert("Success: " + JSON.stringify(message)); };
         var error = function(message) { alert("Error: " + message); };
-      
-        // create
-        window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+        window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,success,error);
     }
     
     function vibrate() {
@@ -115,8 +113,8 @@
         <button type="button" class="btn btn-primary" onclick="showAlert(); return false;">
           Push an Alert
         </button><br/><br/>
-        <button class="btn btn-primary" onclick="showCalendar(); return false;">Open the Calendar</button><br/><br/>
-        <button class="btn btn-primary" onclick="vibrate(); return false;">Vibrations</button><br/><br/>
+        <button class="btn btn-primary" onclick="showCalendar();">Open the Calendar</button><br/><br/>
+        <button class="btn btn-primary" onclick="vibrate();">Vibrations</button><br/><br/>
         <button class="btn btn-primary" onclick="capturePhoto();">Capture Photo</button> <br/><br/>
         <button class="btn btn-primary" onclick="flashOn();">Flash On</button> <br/><br/>
         <button class="btn btn-primary" onclick="flashOff();">Flash Off</button> <br/><br/>
