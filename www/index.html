@@ -6,7 +6,6 @@
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="js/plugins/Flashlight.js"></script>
-    <script src="js/plugins/Calendar.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -39,16 +38,14 @@
     
     function showCalendar() {
     // prep some variables
-        var startDate = new Date("May 24, 2014 13:00:00");
-        var endDate = new Date("May 24, 2014 14:30:00");
-        var title = "My Calendar";
-        var location = "Home";
-        var notes = "Add my event";
-        var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-        var error = function(message) { alert("Error: " + message); };
-      
-        // create
-        window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+       var title = "title";
+      var location = "location";
+      var notes = "notes";
+      var startDate = new Date(2104,5,5,10,30);
+      var endDate = new Date(2104,5,5,20,30);
+      window.Calendar.createEvent(title, location, notes, startDate, endDate, 
+      function() {console.log('success');}, 
+      function() {console.log('fail');});
     }
     
     function vibrate() {
