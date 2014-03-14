@@ -38,11 +38,11 @@
     
     function showCalendar() {
     // prep some variables
-       var title = "title";
+      var title = "title";
       var location = "location";
       var notes = "notes";
-      var startDate = new Date(2104,5,5,10,30);
-      var endDate = new Date(2104,5,5,20,30);
+      var startDate = new Date(2014,4,15,10,30);
+      var endDate = new Date(2014,4,15,20,30);
       window.Calendar.createEvent(title, location, notes, startDate, endDate, 
       function() {console.log('success');}, 
       function() {console.log('fail');});
@@ -112,8 +112,8 @@
         <button type="button" class="btn btn-primary" onclick="showAlert(); return false;">
           Push an Alert
         </button><br/><br/>
-        <button class="btn btn-primary" onclick="showCalendar(); return false;">Open the Calendar</button><br/><br/>
-        <button class="btn btn-primary" onclick="vibrate(); return false;">Vibrations</button><br/><br/>
+        <button class="btn btn-primary" onclick="showCalendar();">Open the Calendar</button><br/><br/>
+        <button class="btn btn-primary" onclick="vibrate();">Vibrations</button><br/><br/>
         <button class="btn btn-primary" onclick="capturePhoto();">Capture Photo</button> <br/><br/>
         <button class="btn btn-primary" onclick="flashOn();">Flash On</button> <br/><br/>
         <button class="btn btn-primary" onclick="flashOff();">Flash Off</button> <br/><br/>
